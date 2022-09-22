@@ -58,14 +58,6 @@ class _PaymentScreenState extends ConsumerState<PaymentScreen> {
                 : Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        // Stripe Payment
-                        // _viewModel.makeStripePayment(
-                        //   ref,
-                        //   widget.event.prices[0].toString(),
-                        //   'USD',
-                        // );
-
-                        // PayTabs Payment
                         _viewModel.makePayTabsPayment(ref, 100.0);
                       },
                       style: ElevatedButton.styleFrom(

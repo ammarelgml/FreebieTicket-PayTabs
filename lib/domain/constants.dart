@@ -1,13 +1,6 @@
 import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-const String stripePublishableKey =
-    'pk_test_51LiFI0FTA8ED6IvxXJ3sWBgCF2CL1cB3xA5AFtjd5RYvgDee0sqiZH2aDegUgIp9oPmx1mgngjiTcK3LnEb7MP8Y00ln4B7iH5';
-
-// Todo: Remove it before commit
-const String stripeSecretKey =
-    'sk_test_51LiFI0FTA8ED6Ivx6dImUjq9No9iwtqL8NokrxxjlFudc2CF5E4kC90fQacDaLYYvcecpZd5Nb01QIpDsn8zX74C002teA8dET';
-
 const double dotRadius = 5;
 const double dotSpacing = 15;
 

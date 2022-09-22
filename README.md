@@ -8,7 +8,7 @@
 
 * Retrieve events from backend using REST APIs and displays them.
 * Filter events according to their category.
-* Purchase tickets using the stripe payment gateway.
+* Purchase tickets using the PayTabs payment gateway.
 * Search & view events on a google maps display.
 
 <h1 align="center">
