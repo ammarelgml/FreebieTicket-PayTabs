@@ -1,3 +1,4 @@
+import 'package:flutter_paytabs_bridge/BaseBillingShippingInfo.dart';
 import 'package:flutter_paytabs_bridge/IOSThemeConfiguration.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkConfigurationDetails.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkLocale.dart';
@@ -24,6 +25,7 @@ class PayTabsService {
 
     var theme = IOSThemeConfigurations();
     theme.logoImage = AssetImages.appLogo;
+    theme.backgroundColor = "fc1055";
     configuration.iOSThemeConfigurations = theme;
 
     configuration.showBillingInfo = true;

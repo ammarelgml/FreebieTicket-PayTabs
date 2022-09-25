@@ -20,7 +20,7 @@ class PaymentViewModel {
           if (transactionDetails["isSuccess"]) {
             ref.setPaymentState(SuccessPaymentState());
           } else {
-            ref.setPaymentState(ErrorPaymentState('Error'));
+            ref.setPaymentState(ErrorPaymentState(event["message"]));
           }
         } else if (event["status"] == "error") {
           ref.setPaymentState(ErrorPaymentState('Error'));
