@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ticket_app/presentation/search/search_screen.dart';
 
 import '../../domain/models/event.dart';
 import '../event_details/event_details_screen.dart';
@@ -32,8 +31,7 @@ class AppRouter {
       case RouterNames.paymentRoute:
         return MaterialPageRoute(
             builder: (_) => PaymentScreen(event: settings.arguments as Event));
-      case RouterNames.searchRoute:
-        return MaterialPageRoute(builder: (_) => SearchScreen());
+
       default:
         return unDefinedRoute();
     }

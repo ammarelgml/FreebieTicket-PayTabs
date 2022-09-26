@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart'
-    show LatLng, Marker, MarkerId;
+
 import 'package:ticket_app/domain/constants.dart';
 
 import '../presentation/payment/payment_states.dart';
@@ -158,20 +157,6 @@ extension SharedEvents on WidgetRef {
       return 'assets/images/sport_marker.png';
     else
       return 'assets/images/music_marker.png';
-  }
-
-  Map<String, Marker> initMarkersMap() => {
-        for (final event in sharedEvents)
-          '${event.id}': Marker(
-            markerId: MarkerId('${event.id}'),
-            position: LatLng(event.eventLatLng.lat, event.eventLatLng.lng),
-          )
-      };
-
-  Map<String, Marker> get markersMap => watch(markersMapProvider);
-
-  void setMarker(Marker marker) {
-    read(markersMapProvider.notifier).state[marker.markerId.value] = marker;
   }
 }
 

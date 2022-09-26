@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart' show Marker;
 import 'package:ticket_app/domain/constants.dart';
 
 import '../presentation/styles/app_theme.dart';
@@ -56,8 +55,6 @@ final timeoutProviderHelper = Provider<void>(
 
 final sharedEventsProvider = StateProvider<List<Event>>((ref) => []);
 
-final markersMapProvider = StateProvider<Map<String, Marker>>((ref) => {});
-
 final paymentStateProvider =
     StateProvider<PaymentStates>((ref) => InitialPaymentState());
 
@@ -74,11 +71,6 @@ final filteredUpcomingEventsProvider =
     return events.where((event) => event.label == 'sport').toList();
   }
 });
-
-final eventDetailsMarkersMapProvider =
-    StateProvider.autoDispose<Map<String, Marker>>(
-  (ref) => {},
-);
 
 final ticketsOwnedProvider = StateProvider<List<Event>>((ref) => []);
 

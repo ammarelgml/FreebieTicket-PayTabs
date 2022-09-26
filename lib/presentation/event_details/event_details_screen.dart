@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ticket_app/domain/ext.dart';
 import 'package:ticket_app/domain/providers.dart';
 import 'package:ticket_app/presentation/router/router_names.dart';
@@ -34,20 +33,6 @@ class _EventDetailsScreenState extends ConsumerState<EventDetailsScreen> {
   final PageStorageBucket appBucket = PageStorageBucket();
 
   @override
-  void initState() {
-    ref.read(eventDetailsMarkersMapProvider.notifier).state = {
-      '${widget.event.id}': Marker(
-        markerId: MarkerId(widget.event.id.toString()),
-        position: LatLng(
-          widget.event.eventLatLng.lat,
-          widget.event.eventLatLng.lng,
-        ),
-      ),
-    };
-    super.initState();
-  }
-
-  @override
   void dispose() {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: AppColors.white,
@@ -57,63 +42,8 @@ class _EventDetailsScreenState extends ConsumerState<EventDetailsScreen> {
     super.dispose();
   }
 
-  addMarker(markerID, context, icon) {
-    _getAssetIcon(context, icon).then(
-      (BitmapDescriptor icon) {
-        _setMarkerIcon(markerID, icon);
-      },
-    );
-  }
-
-  void _setMarkerIcon(String markerID, BitmapDescriptor assetIcon) {
-    if (mounted) {
-      setState(
-        () {
-          ref.read(eventDetailsMarkersMapProvider.notifier).state = {
-            '${widget.event.id}': Marker(
-              markerId: MarkerId(markerID),
-              position: LatLng(
-                widget.event.eventLatLng.lat,
-                widget.event.eventLatLng.lng,
-              ),
-            ).copyWith(
-              iconParam: assetIcon,
-            ),
-          };
-        },
-      );
-    }
-  }
-
-  Future<BitmapDescriptor> _getAssetIcon(BuildContext context, icon) async {
-    final Completer<BitmapDescriptor> bitmapIcon =
-        Completer<BitmapDescriptor>();
-    final ImageConfiguration config = createLocalImageConfiguration(context);
-
-    AssetImage(icon)
-        .resolve(config)
-        .addListener(ImageStreamListener((ImageInfo image, bool sync) async {
-      final ByteData? bytes =
-          await image.image.toByteData(format: ImageByteFormat.png);
-      if (bytes == null) {
-        bitmapIcon.completeError(Exception('Unable to encode icon'));
-        return;
-      }
-      final BitmapDescriptor bitmap =
-          BitmapDescriptor.fromBytes(bytes.buffer.asUint8List());
-      bitmapIcon.complete(bitmap);
-    }));
-
-    return await bitmapIcon.future;
-  }
-
   @override
   Widget build(BuildContext context) {
-    addMarker(
-      widget.event.id.toString(),
-      context,
-      ref.getMarkerIcon(widget.event),
-    );
     return NotificationListener<OverscrollIndicatorNotification>(
       onNotification: (overscroll) {
         overscroll.disallowIndicator();
@@ -150,6 +80,14 @@ class _EventDetailsScreenState extends ConsumerState<EventDetailsScreen> {
                         begin: Alignment.bottomCenter,
                         end: Alignment.center,
                       ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(16),
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back_ios_new),
+                      color: AppColors.white,
+                      onPressed: () => Navigator.of(context).pop(),
                     ),
                   ),
                 ],
@@ -453,24 +391,8 @@ class _EventDetailsScreenState extends ConsumerState<EventDetailsScreen> {
                           ),
                           const SizedBox(height: 16),
                           SizedBox(
-                            child: GoogleMap(
-                              initialCameraPosition: CameraPosition(
-                                target: LatLng(
-                                  widget.event.eventLatLng.lat,
-                                  widget.event.eventLatLng.lng,
-                                ),
-                                zoom: 17,
-                              ),
-                              myLocationButtonEnabled: false,
-                              zoomControlsEnabled: false,
-                              mapType: MapType.normal,
-                              markers: ref
-                                  .watch(eventDetailsMarkersMapProvider)
-                                  .values
-                                  .toSet(),
-                              onMapCreated: (GoogleMapController controller) {
-                                controller.setMapStyle(mapStyle);
-                              },
+                            child: Image(
+                              image: AssetImage(AssetImages.map),
                             ),
                             height: MediaQuery.of(context).size.height * 0.25,
                           ),

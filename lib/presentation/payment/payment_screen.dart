@@ -137,6 +137,7 @@ class _PaymentScreenState extends ConsumerState<PaymentScreen> {
                 Platform.isAndroid
                     ? AssetImages.samsungPay
                     : AssetImages.applePay,
+                height: Platform.isAndroid ? null : 50,
               ),
               flag: flag,
               onPress: () {

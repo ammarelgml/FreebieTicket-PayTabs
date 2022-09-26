@@ -24,7 +24,6 @@ class HomeViewModel {
   getEvents(WidgetRef ref) => eventsRepository.getEvents().then((value) {
         events.addAll(value);
         ref.read(sharedEventsProvider.notifier).state = events;
-        ref.read(markersMapProvider.notifier).state = ref.initMarkersMap();
         ref.read(forYouProvider.notifier).state = true;
       });
 

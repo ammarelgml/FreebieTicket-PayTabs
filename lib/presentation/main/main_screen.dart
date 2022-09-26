@@ -21,11 +21,6 @@ class MainScreen extends ConsumerWidget {
           : AppBar(
               title: Text(_title[ref.bottomBarIndex]),
               centerTitle: true,
-              actions: [
-                IconButton(onPressed: () {
-                  Navigator.pushNamed(context, RouterNames.searchRoute);
-                }, icon: Icon(Icons.search, color: AppColors.black)),
-              ],
             ),
       body: _tabViews[ref.bottomBarIndex],
       bottomNavigationBar: BottomNavigationBar(

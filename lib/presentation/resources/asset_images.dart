@@ -32,4 +32,5 @@ class AssetImages {
   static const String organizer = '${imagesBaseUrl}organizer.png';
   static const String place = '${imagesBaseUrl}place.png';
   static const String organizerIcon = '${imagesBaseUrl}organizer_icon.png';
+  static const String map = '${imagesBaseUrl}map.png';
 }
