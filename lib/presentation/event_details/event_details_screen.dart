@@ -1,15 +1,10 @@
-import 'dart:async';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ticket_app/domain/ext.dart';
-import 'package:ticket_app/domain/providers.dart';
 import 'package:ticket_app/presentation/router/router_names.dart';
 import 'package:ticket_app/presentation/widgets/organizer_item.dart';
-import '../../domain/constants.dart';
 import '../../domain/models/event.dart';
 import '../resources/asset_images.dart';
 import '../styles/app_colors.dart';
@@ -82,12 +77,15 @@ class _EventDetailsScreenState extends ConsumerState<EventDetailsScreen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(16),
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back_ios_new),
-                      color: AppColors.white,
-                      onPressed: () => Navigator.of(context).pop(),
+                  Material(
+                    color: AppColors.transparent,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 24, left: 4),
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_back_ios_new),
+                        color: AppColors.white,
+                        onPressed: () => Navigator.of(context).pop(),
+                      ),
                     ),
                   ),
                 ],
