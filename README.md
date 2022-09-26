@@ -15,10 +15,9 @@
     Demo 💾 (The gifs may take time to load...)
 </h1>
 <p float="left" align="center">
-<img src="readme_demos/home_event_details.gif" width=20% hspace="1%">
-<img src="readme_demos/search.gif" width=20% hspace="1%">
-<img src="readme_demos/buy_ticket.gif" width=20% hspace="1%">
-<img src="readme_demos/settings.gif" width=20% hspace="1%">
+<img src="readme_demos/home_event_details.gif" width=30% hspace="1%">
+<img src="readme_demos/search.gif" width=30% hspace="1%">
+<img src="readme_demos/buy_ticket.gif" width=30% hspace="1%">
 </p>
 
 <h1 align="center">
@@ -27,6 +26,14 @@
 <p align="center">
     <img src="readme_demos/technologies.png">
 </p>
+
+<h1 align="center">
+ Collaborators 👨 💻
+</h1> 
+
+[Abdelrahman Jamal](https://www.linkedin.com/in/abdelrahmanjamal)
+
+[Ammar Elgml](https://www.linkedin.com/in/ammar-elgml/)
 
 <h1 align="center">
  Prerequisites 📚
@@ -49,7 +56,6 @@ Then with your emulator open, follow up with
 ```
 flutter run
 ```
-You can download the latest android version of the app from [here](https://drive.google.com/uc?export=view&id=1Y8gfsdUTIgQxqki6dQaUJURQZi5M4xxy) 
 
 <h1 align="center">
     Attributions 💚

@@ -11,6 +11,10 @@ class AssetImages {
   static const String whatsapp = '${svgBaseUrl}whatsapp.svg';
   static const String linkedin = '${svgBaseUrl}linkedin.svg';
   static const String github = '${svgBaseUrl}github.svg';
+  static const String samsungPay = '${svgBaseUrl}samsungPayLogo.svg';
+  static const String applePay = '${svgBaseUrl}applePayLogo.svg';
+  static const String valU = '${svgBaseUrl}valuLogo.svg';
+  static const String fawry = '${svgBaseUrl}fawryLogo.svg';
 
   static const String searchInactive = '${imagesBaseUrl}search_inactive.png';
   static const String searchActive = '${imagesBaseUrl}search_active.png';

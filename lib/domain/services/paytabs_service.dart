@@ -1,3 +1,4 @@
+import 'package:flutter_paytabs_bridge/BaseBillingShippingInfo.dart';
 import 'package:flutter_paytabs_bridge/IOSThemeConfiguration.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkConfigurationDetails.dart';
 import 'package:flutter_paytabs_bridge/PaymentSdkLocale.dart';
@@ -7,6 +8,28 @@ import 'package:ticket_app/presentation/resources/asset_images.dart';
 import '../network/requests/paytabs_payment_request.dart';
 
 class PayTabsService {
+  final billingInfo = BillingDetails(
+    'Abdelrahman Jamal',
+    'abdelrahmanjamal5565@gmail.com',
+    '848484848484',
+    'addressLine 1',
+    'AE',
+    'Cairo',
+    'state',
+    '12325',
+  );
+
+  final shippingInfo = ShippingDetails(
+    'Abdelrahman Jamal',
+    'abdelrahmanjamal5565@gmail.com',
+    '848484848484',
+    'addressLine 1',
+    'AE',
+    'Cairo',
+    'state',
+    '12325',
+  );
+
   configPayment({required PayTabsPaymentRequest payTabsPaymentRequest}) {
     var configuration = PaymentSdkConfigurationDetails(
       profileId: '47554',
@@ -20,14 +43,16 @@ class PayTabsService {
       amount: payTabsPaymentRequest.amount,
       currencyCode: payTabsPaymentRequest.currency,
       merchantCountryCode: payTabsPaymentRequest.countryCode,
+      billingDetails: billingInfo,
     );
 
     var theme = IOSThemeConfigurations();
     theme.logoImage = AssetImages.appLogo;
+    theme.backgroundColor = "fc1055";
     configuration.iOSThemeConfigurations = theme;
 
-    configuration.showBillingInfo = true;
-    configuration.showShippingInfo = true;
+    configuration.showBillingInfo = false;
+    configuration.showShippingInfo = false;
     configuration.tokeniseType = PaymentSdkTokeniseType.MERCHANT_MANDATORY;
     return configuration;
   }

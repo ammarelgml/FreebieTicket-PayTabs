@@ -15,7 +15,7 @@ class PaymentOption extends StatefulWidget {
   final double height;
   final int index;
   final String name;
-  final IconData icon;
+  final Widget icon;
   final int flag;
   final Function onPress;
 
@@ -48,8 +48,9 @@ class _PaymentOptionState extends State<PaymentOption> {
                 widget.flag == widget.index
                     ? Icons.check_circle
                     : Icons.radio_button_off_outlined,
-                color:
-                    widget.flag == widget.index ? AppColors.red : Colors.black54,
+                color: widget.flag == widget.index
+                    ? AppColors.red
+                    : Colors.black54,
               ),
               const SizedBox(width: 8),
               Text(
@@ -57,7 +58,7 @@ class _PaymentOptionState extends State<PaymentOption> {
                 style: const TextStyle(fontSize: 16, color: Colors.black54),
               ),
               const Spacer(),
-              Icon(widget.icon, color: Colors.black54),
+              widget.icon,
             ],
           ),
         ),
