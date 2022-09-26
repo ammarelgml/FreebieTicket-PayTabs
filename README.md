@@ -28,6 +28,14 @@
 </p>
 
 <h1 align="center">
+ Collaborators 👨 💻
+</h1> 
+
+[Abdelrahman Jamal](linkedin.com/in/abdelrahmanjamal)
+
+[Ammar Elgml](https://www.linkedin.com/in/ammar-elgml/)
+
+<h1 align="center">
  Prerequisites 📚
 </h1>
 Make sure you meet the following requirements:
@@ -48,7 +56,6 @@ Then with your emulator open, follow up with
 ```
 flutter run
 ```
-You can download the latest android version of the app from [here](https://drive.google.com/uc?export=view&id=1Y8gfsdUTIgQxqki6dQaUJURQZi5M4xxy) 
 
 <h1 align="center">
     Attributions 💚

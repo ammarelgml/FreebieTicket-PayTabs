@@ -13,7 +13,7 @@ class PayTabsService {
     'abdelrahmanjamal5565@gmail.com',
     '848484848484',
     'addressLine 1',
-    'United Arab Emirates',
+    'AE',
     'Cairo',
     'state',
     '12325',
@@ -24,7 +24,7 @@ class PayTabsService {
     'abdelrahmanjamal5565@gmail.com',
     '848484848484',
     'addressLine 1',
-    'United Arab Emirates',
+    'AE',
     'Cairo',
     'state',
     '12325',
@@ -44,7 +44,6 @@ class PayTabsService {
       currencyCode: payTabsPaymentRequest.currency,
       merchantCountryCode: payTabsPaymentRequest.countryCode,
       billingDetails: billingInfo,
-      shippingDetails: shippingInfo,
     );
 
     var theme = IOSThemeConfigurations();
