@@ -8,6 +8,28 @@ import 'package:ticket_app/presentation/resources/asset_images.dart';
 import '../network/requests/paytabs_payment_request.dart';
 
 class PayTabsService {
+  final billingInfo = BillingDetails(
+    'Abdelrahman Jamal',
+    'abdelrahmanjamal5565@gmail.com',
+    '848484848484',
+    'addressLine 1',
+    'United Arab Emirates',
+    'Cairo',
+    'state',
+    '12325',
+  );
+
+  final shippingInfo = ShippingDetails(
+    'Abdelrahman Jamal',
+    'abdelrahmanjamal5565@gmail.com',
+    '848484848484',
+    'addressLine 1',
+    'United Arab Emirates',
+    'Cairo',
+    'state',
+    '12325',
+  );
+
   configPayment({required PayTabsPaymentRequest payTabsPaymentRequest}) {
     var configuration = PaymentSdkConfigurationDetails(
       profileId: '47554',
@@ -21,6 +43,8 @@ class PayTabsService {
       amount: payTabsPaymentRequest.amount,
       currencyCode: payTabsPaymentRequest.currency,
       merchantCountryCode: payTabsPaymentRequest.countryCode,
+      billingDetails: billingInfo,
+      shippingDetails: shippingInfo,
     );
 
     var theme = IOSThemeConfigurations();
@@ -28,8 +52,8 @@ class PayTabsService {
     theme.backgroundColor = "fc1055";
     configuration.iOSThemeConfigurations = theme;
 
-    configuration.showBillingInfo = true;
-    configuration.showShippingInfo = true;
+    configuration.showBillingInfo = false;
+    configuration.showShippingInfo = false;
     configuration.tokeniseType = PaymentSdkTokeniseType.MERCHANT_MANDATORY;
     return configuration;
   }

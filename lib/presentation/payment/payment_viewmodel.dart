@@ -20,10 +20,10 @@ class PaymentViewModel {
           if (transactionDetails["isSuccess"]) {
             ref.setPaymentState(SuccessPaymentState());
           } else {
-            ref.setPaymentState(ErrorPaymentState(event["message"]));
+            ref.setPaymentState(ErrorPaymentState('Error 2222S'));
           }
         } else if (event["status"] == "error") {
-          ref.setPaymentState(ErrorPaymentState('Error'));
+          ref.setPaymentState(ErrorPaymentState('Error 1111'));
         } else if (event["status"] == "event") {}
       },
     );

@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:ticket_app/presentation/search/search_screen.dart';
 
 import '../../domain/models/event.dart';
-import '../contact_us/contact_us_screen.dart';
 import '../event_details/event_details_screen.dart';
 import '../styles/app_colors.dart';
 import '../main/main_screen.dart';
@@ -26,8 +25,6 @@ class AppRouter {
             event: settings.arguments as Event,
           ),
         );
-      case RouterNames.contactUsRoute:
-        return MaterialPageRoute(builder: (_) => const ContactUsScreen());
       case RouterNames.eventDetailsRoute:
         return MaterialPageRoute(
             builder: (_) =>

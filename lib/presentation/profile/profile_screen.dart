@@ -46,10 +46,12 @@ class ProfileScreen extends StatelessWidget {
                 'Contact Us',
                 style: Theme.of(context).textTheme.titleSmall,
               ),
-              trailing: const Icon(Icons.arrow_forward_ios,
-                  size: 16, color: AppColors.grey),
-              onTap: () =>
-                  Navigator.of(context).pushNamed(RouterNames.contactUsRoute),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                size: 16,
+                color: AppColors.grey,
+              ),
+              onTap: () {},
             ),
             ListTile(
               leading: const Icon(Icons.share, color: AppColors.red),
