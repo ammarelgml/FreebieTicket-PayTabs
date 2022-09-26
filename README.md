@@ -31,7 +31,7 @@
  Collaborators 👨 💻
 </h1> 
 
-[Abdelrahman Jamal](linkedin.com/in/abdelrahmanjamal)
+[Abdelrahman Jamal](https://www.linkedin.com/in/abdelrahmanjamal)
 
 [Ammar Elgml](https://www.linkedin.com/in/ammar-elgml/)
 
