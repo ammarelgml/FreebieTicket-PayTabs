@@ -48,7 +48,7 @@ class PayTabsService {
 
     var theme = IOSThemeConfigurations();
     theme.logoImage = AssetImages.appLogo;
-    theme.backgroundColor = "fc1055";
+
     configuration.iOSThemeConfigurations = theme;
 
     configuration.showBillingInfo = false;
