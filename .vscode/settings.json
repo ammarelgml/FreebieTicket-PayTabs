@@ -3,5 +3,6 @@
         "cupertino",
         "LTRB",
         "riverpod"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "disabled"
 }
