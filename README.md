@@ -1,7 +1,3 @@
-<p align="center">
-    <img src="readme_demos/poster.png">
-</p>
-
 <h1 align="center">
     Features 🔥
 </h1>
