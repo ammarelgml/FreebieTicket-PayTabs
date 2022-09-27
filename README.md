@@ -24,7 +24,7 @@
 </p>
 
 <h1 align="center">
- [Flutter PayTabs Bridge](https://pub.dev/packages/flutter_paytabs_bridge)
+ Flutter PayTabs Bridge
 </h1>
 
 <h3>
@@ -109,6 +109,7 @@ var shippingDetails = new ShippingDetails("shipping name",
      
 ```
 
+[Flutter PayTabs Bridge Package](https://pub.dev/packages/flutter_paytabs_bridge)
 
 
 <h1 align="center">
